@@ -1,0 +1,97 @@
+#box {
+	background-color: rgb(142, 187, 201);
+	width: 310px;
+	height: 310px;
+	border-radius: 15px;
+	margin-left: 3px;
+
+	text-align: center;
+}
+
+#hero {
+	background-color: honeydew;
+	object-fit: contain;
+}
+
+#coloredPageBreak {
+	background-color: rgb(153, 215, 226);
+}
+#friendHeader {
+    padding-top: 25px;
+    font-size: xx-large;
+ 
+    font-weight: bold;
+    margin-bottom: 0px;
+ 
+}
+body {
+    margin-left: 55px;
+    margin-top: 65px;
+}
+ 
+p {
+    padding-top: 5px;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ 
+#profilePic {
+    width: 250px;
+    border-radius: 125px;
+    float: center;
+    margin-top: 50px;
+    padding: 10px 10px 0px 10px;
+}
+ 
+#profile {
+    background-color:rgb(141, 176, 241);
+    width: 500px;
+    height: 150px;
+    color:cadetblue;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+#CenterProfile {
+	text-align: center;
+}
+#contact {
+    background-color: rgb(142, 187, 201);
+
+	height: 300px;
+	border-radius: 15px;
+    margin: 25px auto 0px auto;
+}
+#spaceBlock {
+    background-color: white;
+	width: auto;
+	height: 310px;
+	margin-left: 3px;
+
+	text-align: center;
+
+}
+
+#button {
+    background: #219ecf;
+    border: 15px solid #219ecf;
+    padding: 0 10px;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color:rgb(240, 231, 247);
+ 
+}
