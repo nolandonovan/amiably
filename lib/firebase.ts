@@ -22,11 +22,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 if (!firebase.apps.length){
-    firebase.initializeApp(firebaseConfig);
-    // commenting out analytics for now. will need to make the line above a const named 'app'
-    // const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
+  // commenting out analytics for now. will need to make the line above a const named 'app'
+  // const analytics = getAnalytics(app);
 }
 
+// Auth exports
 export const auth = firebase.auth();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+//Storage exports
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
