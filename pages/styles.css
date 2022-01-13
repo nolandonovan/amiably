@@ -16,14 +16,47 @@
 #coloredPageBreak {
 	background-color: rgb(153, 215, 226);
 }
-#friendHeader {
-    padding-top: 25px;
-    font-size: xx-large;
- 
-    font-weight: bold;
-    margin-bottom: 0px;
- 
+
+/* Profiles : Begin  */
+
+img.avatar {
+    height: 200px;
+    float: left;
+    border-radius: 100px;
+    margin: 25px;
 }
+
+    #avatarName {
+        padding-top: 100px;
+        font-size: xx-large;
+
+        font-weight: bold;
+        margin-bottom: 0px;
+    
+    }
+    #profilePic {
+        width: 250px;
+        border-radius: 125px;
+        float: center;
+        margin-top: 50px;
+        padding: 10px 10px 0px 10px;
+    }
+
+    #profile {
+        background-image: url("IMAGES/gradient.jpg");
+        background-attachment: fixed;
+        width: auto;
+        height: 250px;
+        padding-left: 5px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+    #CenterProfile {
+        text-align: center;
+    }
+
+/* Profiles : END */
+
 body {
     margin-left: 55px;
     margin-top: 65px;
@@ -35,33 +68,9 @@ p {
     margin-top: 5px;
     margin-bottom: 5px;
 }
- 
-#profilePic {
-    width: 250px;
-    border-radius: 125px;
-    float: center;
-    margin-top: 50px;
-    padding: 10px 10px 0px 10px;
-}
- 
-#profile {
-    background-color:rgb(141, 176, 241);
-    width: 500px;
-    height: 150px;
-    color:cadetblue;
-    padding-left: 5px;
-    border-radius: 10px;
-}
-#CenterProfile {
-	text-align: center;
-}
-#contact {
-    background-color: rgb(142, 187, 201);
 
-	height: 300px;
-	border-radius: 15px;
-    margin: 25px auto 0px auto;
-}
+ 
+
 #spaceBlock {
     background-color: white;
 	width: auto;
