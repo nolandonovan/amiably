@@ -1,23 +1,25 @@
-export {};
+import React, { Component } from 'react';
 
+export default function Index(profile) {
+    
+  
+    
 
-// this is my main.js located in scripts catalog
-// document.getElementById('script') = "<p> hii </p>"
+   let text = "<p> hii </p>";
 
+   return text
+  }
+// // 1. Select the div element using the id property
+// const app = document.getElementById("scipt");
 
+// // 2. Create a new <p></p> element programmatically
+// const p = document.createElement("p");
 
+// // 3. Add the text content
+// p.textContent = "Hello, World!";
 
-// 1. Select the div element using the id property
-const app = document.getElementById("scipt");
-
-// 2. Create a new <p></p> element programmatically
-const p = document.createElement("p");
-
-// 3. Add the text content
-p.textContent = "Hello, World!";
-
-// 4. Append the p element to the div element
-app?.appendChild(p);
+// // 4. Append the p element to the div element
+// app?.appendChild(p);
 
 
 
