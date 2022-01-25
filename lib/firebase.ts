@@ -21,16 +21,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-if (!firebase.apps.length){
-  firebase.initializeApp(firebaseConfig);
-  // commenting out analytics for now. will need to make the line above a const named 'app'
-  // const analytics = getAnalytics(app);
-}
+const app =  firebase.initializeApp(firebaseConfig);
 
 // Auth exports
 export const auth = firebase.auth();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-//Storage exports
+//Storage
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
