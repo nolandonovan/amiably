@@ -5,31 +5,26 @@ import styles from '../styles/Home.module.css'
 import { useContext } from 'react';
 import { UserContext } from '../lib/context';
 import toast from 'react-hot-toast';
+import { firestore } from '../lib/firebase';
+import { getDocs, collection } from "firebase/firestore";
+
+
+export async function Users() {
+  
+  const {user} = useContext(UserContext)
+  
+  const userContacts = await getDocs(collection(firestore,`users/${user.uid}/contacts`))
+  userContacts.forEach((doc) => {
+    console.log(doc.data()); // "doc1", "doc2" and "doc3"
+  });
+
+};
 
 export default function Home() {
-  
-  const { user, firstName} = useContext(UserContext)
-  
+  Users()
   return (
-    <div>
+    <main>
       <h1>Home</h1>
-      {/* user is signed-in*/}
-      {firstName && (
-          <>
-            <h2>Hello {firstName}!</h2>
-            <button onClick={() => toast.success('hello toast!')}>Toast Me</button>
-          </>
-      )}
-
-      {/* user is NOT signed*/}
-      {!firstName && (
-        <>
-          <h2>Sign in to continue</h2>
-            <Link href="/settings">
-              <button className="btn-blue">Log in</button>
-            </Link>
-        </>
-      )}
-    </div>
-  )
+    </main>
+  );
 }

@@ -5,7 +5,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 // Custom hook to read  auth record and user profile doc
 export function useUserData() {
   const [user] = useAuthState(auth);
-  const [firstName, setFirstName] = useState(null);
 
   useEffect(() => {
     // turn off realtime subscription
@@ -13,15 +12,13 @@ export function useUserData() {
 
     if (user) {
       const ref = firestore.collection('users').doc(user.uid);
-      unsubscribe = ref.onSnapshot((doc) => {
-        setFirstName(doc.data()?.firstName);
-      });
-    } else {
-      setFirstName(null);
+      // unsubscribe = ref.onSnapshot((doc) => {
+      //   //setFirstName(doc.data()?.firstName);
+      // });
     }
 
     return unsubscribe;
   }, [user]);
 
-  return { user, firstName };
+  return { user };
 }
