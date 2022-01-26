@@ -1,10 +1,9 @@
-#box {
+.box {
 	background-color: rgb(142, 187, 201);
 	width: 310px;
 	height: 310px;
 	border-radius: 15px;
 	margin-left: 3px;
-
 	text-align: center;
 }
 
@@ -26,14 +25,13 @@ img.avatar {
     margin: 25px;
 }
 
-    #avatarName {
-        padding-top: 100px;
-        font-size: xx-large;
+.avatarName {
+    padding-top: 100px;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 0px;
 
-        font-weight: bold;
-        margin-bottom: 0px;
-    
-    }
+}
     #profilePic {
         width: 250px;
         border-radius: 125px;
@@ -42,7 +40,7 @@ img.avatar {
         padding: 10px 10px 0px 10px;
     }
 
-    #profile {
+  .profile {
         background-image: url("IMAGES/gradient.jpg");
         background-attachment: fixed;
         width: auto;
@@ -50,26 +48,32 @@ img.avatar {
         padding-left: 5px;
         border-radius: 10px;
         margin-bottom: 25px;
-    }
+    } 
     #CenterProfile {
         text-align: center;
     }
 
 /* Profiles : END */
 
-body {
+/* body {
     margin-left: 55px;
     margin-top: 65px;
-}
+} */
  
-p {
+/* p {
     padding-top: 5px;
     color: black;
     margin-top: 5px;
     margin-bottom: 5px;
-}
+} */
 
- 
+  /* List : Start */
+
+.tableList {
+  height:100%;
+  width: 100%;
+  max-width: 680px;
+}
 
 #spaceBlock {
     background-color: white;
@@ -96,11 +100,13 @@ p {
     font-weight: bold;
 }
 
-ul {
+/* ul {
     margin: 0px;
     padding: 0px;
-}
-body {
+} */
+/* body {
     background-color:rgb(240, 231, 247);
  
-}
+} */
+
+/* List : End */
