@@ -12,11 +12,11 @@ export default function List() {
 
         <>
         <title>amiably</title>
-        <body className={StyleSheet.listBackground}>
+        <body className={StyleSheet.backgroundList}>
         <table className={StyleSheet.tableList}>
 
-      <ul>
-    <div className={StyleSheet.profile}>
+      <ul className={StyleSheet.list}>
+    <div className={StyleSheet.boxList}>
         <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
         <div>
         <p className={StyleSheet.avatarName}>
@@ -25,7 +25,7 @@ export default function List() {
         </div>
     </div>
 
-    <div className={StyleSheet.profile}>
+    <div className={StyleSheet.boxList}>
         <img src={'IMAGES/SHBlack.png'} className={StyleSheet.avatar}/>
         <div>
         <p className={StyleSheet.avatarName}>
@@ -33,7 +33,7 @@ export default function List() {
             <span>empty</span>
         </div>
     </div>
-    <div className={StyleSheet.profile}>
+    <div className={StyleSheet.boxList}>
         <img src={'IMAGES/LHblond.png'} className={StyleSheet.avatar}/>
         <div>
         <p className={StyleSheet.avatarName}>
@@ -41,7 +41,7 @@ export default function List() {
             <span>empty</span>
         </div>
     </div>
-    <div className={StyleSheet.profile}>
+    <div className={StyleSheet.boxList}>
         <img src={'IMAGES/SHbrunet1.png'} className={StyleSheet.avatar}/>
         <div>
         <p className={StyleSheet.avatarName}>
@@ -53,7 +53,7 @@ export default function List() {
 
 
       <div className={StyleSheet.datatableList}> 
-          <button onClick={() => toast.success('hello toast!')}>
+          <button className={StyleSheet.buttonList} onClick={() => toast.success('hello toast!')}>
           create user
           </button>
       </div>

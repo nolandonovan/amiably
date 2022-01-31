@@ -9,6 +9,12 @@ import StyleSheet from '../../styles/styleSheet.module.css';
 
 export default function Profile() {
 
+  const profile = [ 
+    {firstName: 'Zoe',
+    lastName: 'Richardson'}
+
+  ];
+
 
 return (
 
@@ -36,7 +42,7 @@ return (
                 <div className={"CenterProfile"}>
                 <img src={"/IMAGES/ZoeFace.jpg"} className={StyleSheet.profilePic}/>
                 <p className={"friendHeader"}>
-                    Zoe Richardson</p>
+                    {profile.firstName} {profile.lastname}</p>
                     <span>July, 23rd, 1997</span>
                 </div>
             
