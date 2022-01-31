@@ -1,26 +1,76 @@
 import * as React from 'react';
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
+import StyleSheet from '../../styles/styleSheet.module.css';
 
-interface profile
-Props {
+
+// Profile : BEGIN
+
+
+export default function Profile() {
+
+
+return (
+
+<div className={StyleSheet.profileBackground}>
+
+<body className={StyleSheet.bodyProfile}>
     
-}
+
+{/* <!-- Hero Image, Flush : BEGIN --> */}
+
+           <tr className={StyleSheet.hero}>
+            <td>
+                <img src={"/IMAGES/wp3198779.jpg"} className={StyleSheet.heroImage}/>
+            </td>
+           </tr>
+           
+           
+ {/* <!-- Hero Image, Flush : END --> */}
+
+ {/* <!-- 1 BIO : BEGIN --> */}
+           <tr>
+             <td>
+                 <table className={StyleSheet.tableProfile}> 
+              
+                <div className={"CenterProfile"}>
+                <img src={"/IMAGES/ZoeFace.jpg"} className={StyleSheet.profilePic}/>
+                <p className={"friendHeader"}>
+                    Zoe Richardson</p>
+                    <span>July, 23rd, 1997</span>
+                </div>
+            
+                 <tr>
+                   <td> 
+                      
+                    {/* <!-- NOTHING IN THIS DATA CELL --> */}
+                     
+                   
+                     {/* <!-- Button : Begin --> */}
+                   
+                      <table className={StyleSheet.tableProfile} >
+                
+                       <tr>
+                         <td className={StyleSheet.tableDataProfile}>
+
+                           {/* </a> */}
+                        </td>
+                       </tr>
+                     </table>
+                    {/* -->
+
+                     <!-- Button : END --> */}
+                    
+                    </td>
+                 </tr>
+               </table></td>
+           </tr>
+         {/* <!-- BIO : END --> */}
+         </body>
+</div>
+
+);
+
+};
  
-interface profile
-State {
-    
-}
- 
-class profile
- extends React.Component<profile
-Props, profile
-State> {
-    state = { :  }
-    render() { 
-        return (  );
-    }
-}
- 
-export default profile
-;
+  
