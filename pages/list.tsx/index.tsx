@@ -5,9 +5,37 @@ import toast from 'react-hot-toast';
 import React from 'react';
 import StyleSheet from '../../styles/styleSheet.module.css'
 
-// List : BEGIN
+// LIST : BEGIN
 
 export default function List() {
+
+    // LIST SCRIPT : BEGIN
+
+const contacts = ['Zoe Richardson', 'Nolan Donovan','Sarah Empty'];
+console.log(contacts);
+// if contacts is empty say create first contact! else display contacts
+if (contacts.length > 0) {
+const allFriends = contacts.map(function(contact) {
+      return (
+    <div className={StyleSheet.boxList}>
+    <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
+    <div>
+    <p className={StyleSheet.avatarName}>
+        {contact} </p>
+        <span>July, 23rd, 1997</span>
+    </div>
+    </div>
+      );
+})
+} else {
+   return <p>Make your first contact!</p>
+  }
+
+
+// LIST SCRIPT : END
+
+// HTML : BEGIN
+
     return (
 
         <>
@@ -16,7 +44,8 @@ export default function List() {
         <table className={StyleSheet.tableList}>
 
       <ul className={StyleSheet.list}>
-    <div className={StyleSheet.boxList}>
+          <div>{allFriends}</div>
+    {/* <div className={StyleSheet.boxList}>
         <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
         <div>
         <p className={StyleSheet.avatarName}>
@@ -48,13 +77,13 @@ export default function List() {
             EMPTY</p>
             <span>empty</span>
         </div>
-    </div>
+    </div> */}
 </ul>
 
 
       <div className={StyleSheet.datatableList}> 
           <button className={StyleSheet.buttonList} onClick={() => toast.success('hello toast!')}>
-          create user
+          add friend
           </button>
       </div>
        
