@@ -9,14 +9,15 @@ import StyleSheet from '../../styles/styleSheet.module.css'
 
 export default function List() {
 
-    // LIST SCRIPT : BEGIN
+// LIST SCRIPT : BEGIN
 
 const contacts = ['Zoe Richardson', 'Nolan Donovan','Sarah Empty'];
-console.log(contacts);
-// if contacts is empty say create first contact! else display contacts
+
+
 if (contacts.length > 0) {
-const allFriends = contacts.map(function(contact) {
-      return (
+
+const mappingContacts = contacts.map(function(contact) {
+    return (
     <div className={StyleSheet.boxList}>
     <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
     <div>
@@ -25,11 +26,15 @@ const allFriends = contacts.map(function(contact) {
         <span>July, 23rd, 1997</span>
     </div>
     </div>
-      );
-})
-} else {
-   return <p>Make your first contact!</p>
-  }
+    ); // return end
+ // function end
+}); // function end
+console.log(mappingContacts);
+} 
+else
+{
+    return <p>Make your first contact!</p>
+}; // end of else
 
 
 // LIST SCRIPT : END
@@ -44,7 +49,8 @@ const allFriends = contacts.map(function(contact) {
         <table className={StyleSheet.tableList}>
 
       <ul className={StyleSheet.list}>
-          <div>{allFriends}</div>
+          <div>{}</div>
+
     {/* <div className={StyleSheet.boxList}>
         <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
         <div>
@@ -78,6 +84,7 @@ const allFriends = contacts.map(function(contact) {
             <span>empty</span>
         </div>
     </div> */}
+
 </ul>
 
 
