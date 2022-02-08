@@ -4,52 +4,26 @@ import Head from 'next/head';
 import toast from 'react-hot-toast';
 import React from 'react';
 import StyleSheet from '../../styles/styleSheet.module.css'
+import { ListComponent } from './listComponent';
 
 // LIST : BEGIN
 
 export default function List() {
 
-// LIST SCRIPT : BEGIN
 
-const contacts = ['Zoe Richardson', 'Nolan Donovan','Sarah Empty'];
-
-
-if (contacts.length > 0) {
-
-const mappingContacts = contacts.map(function(contact) {
-    return (
-    <div className={StyleSheet.boxList}>
-    <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
-    <div>
-    <p className={StyleSheet.avatarName}>
-        {contact} </p>
-        <span>July, 23rd, 1997</span>
-    </div>
-    </div>
-    ); // return end
- // function end
-}); // function end
-console.log(mappingContacts);
-} 
-else
-{
-    return <p>Make your first contact!</p>
-}; // end of else
-
-
-// LIST SCRIPT : END
 
 // HTML : BEGIN
 
     return (
 
         <>
+        
         <title>amiably</title>
         <body className={StyleSheet.backgroundList}>
         <table className={StyleSheet.tableList}>
 
       <ul className={StyleSheet.list}>
-          <div>{}</div>
+          <ListComponent />
 
     {/* <div className={StyleSheet.boxList}>
         <img src={'/IMAGES/ZoeFace.jpg'} className={StyleSheet.avatar}/>
