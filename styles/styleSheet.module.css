@@ -13,7 +13,7 @@
 }
 
 img.heroImage {
-    width:"200";
+    width:200;
     border: 0;
     width: 100%;
     max-width: 700px;
@@ -64,10 +64,30 @@ img.heroImage {
   background: #222222;
   text-align: center;
   width: 100%;
- /* <a href="http://www.google.com" style="background: #222222; border: 15px solid #222222; padding: 0 10px;color: #ffffff; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a"
+ /* <a href:"http://www.google.com" style:"background: #222222; border: 15px solid #222222; padding: 0 10px;color: #ffffff; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class:"button-a"
                                 Get Started */
 }
 
+.icon{
+text-align: center;
+width: 190px;
+padding-top: 20%;
+}
+
+.iconTable{
+width: 100%;
+font-size: 14px;
+text-align: left;
+}
+
+.iconData{
+font-family: sans-serif;
+font-size: 15px;
+line-height: 20px;
+color: #555555;
+padding-top: 10px;
+
+}
 
 .profileBackground {
  background-color: slategrey;
@@ -83,6 +103,38 @@ img.heroImage {
     justify-content: center;
     align-items: center;
  }
+
+ .buttonsTable{
+    background-color: #ffffff;
+    text-align: center;
+    height: 100%;
+    vertical-align: top;
+    width:100%;
+ }
+
+ .a{
+    border: 0;
+       text-align: center;
+        width: 100%;
+        max-width:660px;
+
+ }
+ .b{
+    text-align:center;
+     vertical-align:top;
+    font-size:0;
+    padding: 10px 0;
+ }
+
+ .stackColumn{
+display:inline-block;
+max-width:50%;
+margin: 0 -2px;
+min-width:200px;
+vertical-align:top;
+width:100%;     
+ }
+
 /* p {
     padding-top: 5px;
     color: black;
@@ -130,7 +182,7 @@ img.heroImage {
   background: rgba(127, 170, 199, 0.349);
 }
 
-#spaceBlock {
+/* #spaceBlock {
     background-color: white;
 	width: auto;
 	height: 310px;
@@ -138,9 +190,7 @@ img.heroImage {
 
 	text-align: center;
 
-}
-
-
+} */
 .buttonList {
     background: #219ecf;
     border: 15px solid #219ecf;
@@ -174,3 +224,49 @@ margin: auto;
 
 
 /* List : End */
+
+/* Create New : BEGIN  */
+
+.buttonCreate {
+    background: #219ecf;
+    border: 15px solid #219ecf;
+    padding: 0 10px;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    max-width: 30%;
+    width: auto;
+    min-width: 15%;
+    height: 3%;
+    padding-left: 5px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+
+ .formTable{
+    background-color:aquamarine;
+    text-align: center;
+    height: 100%;
+    vertical-align: top;
+    width: 50%;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 20px;
+    padding-top: 20px;
+
+ }
+
+
+
+ /* Creat New : END  */
