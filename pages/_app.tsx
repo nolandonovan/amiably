@@ -1,14 +1,22 @@
 import '../styles/globals.css'
-
-import {GetServerSideProps} from 'next';
+import { GetServerSideProps } from 'next';
 import { Toaster } from 'react-hot-toast';
+import { UserContext } from '../lib/context';
+import { useUserData } from '../lib/hooks';
+import AuthCheck from '../components/AuthCheck';
+
 
 function MyApp({ Component, pageProps }) {
+
+  const userData = useUserData();
+
   return (
-    <>
-      <Component {...pageProps} />
-      <Toaster />
-    </>
+    <UserContext.Provider value={userData}>
+      <AuthCheck>
+        <Component {...pageProps} />
+        <Toaster />
+      </AuthCheck>
+    </UserContext.Provider>
   )
 }
 
