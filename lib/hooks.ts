@@ -12,13 +12,13 @@ export function useUserData() {
 
     if (user) {
       const ref = firestore.collection('users').doc(user.uid);
-      // unsubscribe = ref.onSnapshot((doc) => {
+      // unsubscribe = ref.onSnapshot()(doc) => {
       //   //setFirstName(doc.data()?.firstName);
       // });
     }
 
     return unsubscribe;
-  }, [user]);
+  }, [user, auth]);
 
   return { user };
 }

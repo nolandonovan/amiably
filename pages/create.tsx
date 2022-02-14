@@ -25,7 +25,8 @@ function CreateContactForm(){
     
     const onSubmit = async (e) => {
         e.preventDefault();
-    
+        
+        console.log(user.uid);
         // Create refs for both documents
         const userDoc = firestore.doc(`users/${user.uid}`);
     
@@ -48,7 +49,7 @@ function CreateContactForm(){
                 <input name="name" placeholder="test123" onChange={e => setName(e.target.value)} /><br/>
             </label><br/>
             <label>Phone:<br/>
-                <input name="phone" placeholder="716-776-2323" onChange={e => setPhone(e.target.value)} /><br/>
+                <input name="phone" placeholder="716-776-2323" type="tel" onChange={e => setPhone(e.target.value)} /><br/>
             </label><br/>
             <div>
                 <button type="submit" className="btn-green">Submit</button>
