@@ -12,6 +12,7 @@ import AuthCheck from '../components/AuthCheck';
 import Contacts from '../lib/contacts';
 
 
+
 // export async function getServerSideProps() {
 
 //   //const user = useContext(UserContext)
@@ -30,6 +31,8 @@ import Contacts from '../lib/contacts';
 
 
 // usestate
+
+
 
 export default function Home() {
 

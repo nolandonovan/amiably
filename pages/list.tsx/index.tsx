@@ -63,9 +63,11 @@ export default function List() {
 
 
       <div className={StyleSheet.datatableList}> 
-          <button className={StyleSheet.buttonList} onClick={() => toast.success('hello toast!')}>
-          add friend
-          </button>
+    <a className={StyleSheet.buttonList}   onClick={() => {
+    window.location.href = '/createNew';
+  }} >
+    add a friend
+    </a>
       </div>
        
       {/* <!-- Footer : BEGIN --> */}
