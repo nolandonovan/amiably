@@ -13,7 +13,7 @@ export default function Profile() {
     {firstName: 'Zoe',
     lastName: 'Richardson'}
 
-  ];
+  ];``
 
 
 return (
