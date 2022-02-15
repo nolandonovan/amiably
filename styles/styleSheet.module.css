@@ -90,11 +90,13 @@ padding-top: 10px;
 }
 
 .profileBackground {
- background-color: slategrey;
  text-align: center;
  margin: auto;
  width: 100%;
 } 
+.profileTab {
+	background-color: rgb(142, 187, 201);
+   } 
 
 .bodyProfile{
     background-color: snow;

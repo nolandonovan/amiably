@@ -1,7 +1,7 @@
 import React from "react";
-import StyleSheet from '../../styles/styleSheet.module.css'
-import { auth, firestore } from "../../lib/firebase"
-import { UserContext } from "../../lib/context";
+import StyleSheet from '../styles/styleSheet.module.css'
+import { auth, firestore } from "../lib/firebase"
+import { UserContext } from "../lib/context";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { doc, setDoc } from "firebase/firestore"; 
 import toast from 'react-hot-toast';

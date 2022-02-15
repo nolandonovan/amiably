@@ -25,7 +25,7 @@
     "**/*.tsx", 
     "pages/TEST.tsx", 
     "pages/list.tsx/listComponent.jsx", 
-    "pages/index.js"],
+    "pages/index.js", "pages/delete"],
 
   "exclude": [
     "node_modules"

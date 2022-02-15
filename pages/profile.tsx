@@ -1,22 +1,43 @@
 import * as React from 'react';
-import { Component } from 'react';
+import { useState, Component } from 'react';
 import ReactDOM from 'react-dom';
-import StyleSheet from '../../styles/styleSheet.module.css';
+import StyleSheet from '../styles/styleSheet.module.css';
+import Edit from './editProfile';
+import ProfileInfo from './profileInfo';
 
 
 // Profile : BEGIN
+const contacts = [{
+  id: 1,
+  name: "Zoe",
+  lastName: "Richardson"
+},
+{
+  id: 2,
+  name: "Noly",
+  lastName: "Donovan"
+}
+];
 
 
 export default function Profile() {
 
-  const profile = [ 
-    {firstName: 'Zoe',
-    lastName: 'Richardson'}
+const [contactinfo, setContactInfo] = useState(contacts);
 
-  ];
+// const updateHandler = (profileInfo) => {
+//   setContactInfo(contactinfo.map)(item => {
+//     if(contacts.id === profileInfo.id) {
+//       return {
+
+//       }
+//     }
+//   })
+// }
+
 
 
 return (
+
 
 <div className={StyleSheet.profileBackground}>
 
@@ -35,23 +56,25 @@ return (
  {/* <!-- Hero Image, Flush : END --> */}
 
  {/* <!-- 1 BIO : BEGIN --> */}
-  <tr>
+  <tr className={StyleSheet.profileTab}>
     <td>
         <table className={StyleSheet.tableProfile}> 
     
-      <div className={"CenterProfile"}>
-      <img src={"/IMAGES/ZoeFace.jpg"} className={StyleSheet.profilePic}/>
+      <ProfileInfo></ProfileInfo>
+      {/* <div className={"CenterProfile"}>
+      <img src={"/IMAGES/SHbrunet1.png"} className={StyleSheet.profilePic}/>
       <p className={"friendHeader"}>
-          {profile.firstName} {profile.lastname}</p>
-          <span>July, 23rd, 1997</span>
-      </div>
+          {profile.firstName}</p>
+          
+          <span></span>
+      </div> */}
+    
   
         <tr>
+          
           <td> 
             
           {/* <!-- NOTHING IN THIS DATA CELL --> */}
-            
-          
             {/* <!-- Button : Begin --> */}
           
             <table className={StyleSheet.tableProfile} >
@@ -80,7 +103,9 @@ return (
       <td className={StyleSheet.b}>
       
       <textarea name="profile" cols="70" rows="10"></textarea>
+      <br/>
 
+        <Edit></Edit>
     </td>
 </tr>
       
