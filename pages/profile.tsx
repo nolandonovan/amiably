@@ -7,20 +7,15 @@ import ProfileInfo from './profileInfo';
 
 
 // Profile : BEGIN
-const contacts = [{
-  id: 1,
-  name: "Zoe",
-  lastName: "Richardson"
-},
-{
-  id: 2,
-  name: "Noly",
-  lastName: "Donovan"
-}
+const contacts: [
+  {id: 1, "name": "Zoe", "lastName": "Richardson"},
+{id: 2, "name": "Noly", "lastName": "Donovan"}
 ];
 
 
 export default function Profile() {
+  
+  const [isEditing, setIsEditing] = useState(false);
 
 // const [contactinfo, setContactInfo] = useState(contacts);
 
@@ -37,9 +32,11 @@ export default function Profile() {
 
 
 return (
-
-
 <div className={StyleSheet.profileBackground}>
+
+ { 
+  isEditing ? (<h1>hi</h1>)
+   : (<h1>bye</h1>)}
 
 <body className={StyleSheet.bodyProfile}>
     
@@ -60,7 +57,7 @@ return (
     <td>
         <table className={StyleSheet.tableProfile}> 
     
-      <ProfileInfo></ProfileInfo>
+      <ProfileInfo key={contacts.id} name={contacts.name}} />
       {/* <div className={"CenterProfile"}>
       <img src={"/IMAGES/SHbrunet1.png"} className={StyleSheet.profilePic}/>
       <p className={"friendHeader"}>
@@ -68,7 +65,6 @@ return (
           
           <span></span>
       </div> */}
-    
   
         <tr>
           
@@ -105,7 +101,13 @@ return (
       <textarea name="profile" cols="70" rows="10"></textarea>
       <br/>
 
-        <Edit></Edit>
+      <div>
+            {
+            isEditing ?
+            <button type="submit" className={StyleSheet.buttonCreate} onClick={() => setIsEditing(false)}>save edits</button> 
+            : <button type="submit" className={StyleSheet.buttonCreate} onClick={() => setIsEditing(true)}>edit</button> 
+           }
+      </div>
     </td>
 </tr>
       
@@ -116,6 +118,8 @@ return (
 {/* <!-- Two Even Columns : END --> */}
 
 </body>
+
+
 
 </div>
 
