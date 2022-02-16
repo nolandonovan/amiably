@@ -14,7 +14,7 @@ function Edit (){
 
     const [isEditing, setIsEditing] = useState(false);
 
-
+    
     return (
         <div>
             {
@@ -24,9 +24,9 @@ function Edit (){
            }
       </div>
     )
-
+}
 
     
-}
+
 
 export default Edit;
