@@ -7,23 +7,32 @@ import { doc, setDoc } from "firebase/firestore";
 import toast from 'react-hot-toast';
 import Edit from "./editProfile";
 
+
+/*
+this is a page for holding the editable info
+
+it needs to be sectionable
+
+I should not have to pull 
+*/
+
  function ProfileInfo (props){
 
 function editTask(id: number, text: any) {
-    if isEditing
-}
+    
+};
 
-const contacts = [{
-    id: 1,
-    name: "Zoe",
-    lastName: "Richardson"
-  },
-  {
-    id: 2,
-    name: "Noly",
-    lastName: "Donovan"
-  }
-  ];
+// const contacts = [{
+//     id: 1,
+//     name: "Zoe",
+//     lastName: "Richardson"
+//   },
+//   {
+//     id: 2,
+//     name: "Noly",
+//     lastName: "Donovan"
+//   }
+//   ];
     return (
         <div className={"CenterProfile"}>
         <img src="/IMAGES/SHbrunet1.png" className={StyleSheet.profilePic} onInput={e => editTask(contacts.id, e.currentTarget.textContent)}/>

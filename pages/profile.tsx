@@ -22,11 +22,11 @@ const contacts = [{
 
 export default function Profile() {
 
-const [contactinfo, setContactInfo] = useState(contacts);
+// const [contactinfo, setContactInfo] = useState(contacts);
 
 // const updateHandler = (profileInfo) => {
 //   setContactInfo(contactinfo.map)(item => {
-//     if(contacts.id === profileInfo.id) {
+//     if(.id === profileInfo.id) {
 //       return {
 
 //       }
@@ -82,7 +82,7 @@ return (
               <tr>
                 <td className={StyleSheet.tableDataProfile}>
 
-                  {/* </a> */}
+                 
               </td>
               </tr>
             </table>

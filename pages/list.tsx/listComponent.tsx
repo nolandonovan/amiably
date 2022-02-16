@@ -12,7 +12,7 @@
  
 // export const ListComponent = () => {
 
-// const contacts = ['Coody biggusts', 'emily who cares'];
+// const contacts = ["zoe"];
 
 // if (contacts.length > 0) {
 // let mappingContacts = contacts.map(function(contact) {
