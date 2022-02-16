@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback, useContext } from 'react';
 import { doc, setDoc } from "firebase/firestore"; 
 import toast from 'react-hot-toast';
 import Edit from "./editProfile";
+import Profile from "./profile";
 
 
 /*
@@ -37,7 +38,7 @@ function editTask(id: number, text: any) {
         <div className={"CenterProfile"}>
         <img src="/IMAGES/SHbrunet1.png" className={StyleSheet.profilePic} onInput={e => editTask(contacts.id, e.currentTarget.textContent)}/>
         <div className={"friendHeader"}  contentEditable="true">
-            {props.name} {props.lastName}</div>
+            {props.name} </div>
             
             <span></span>
         </div>
