@@ -25,11 +25,7 @@
     "**/*.tsx", 
     "pages/TEST.tsx", 
     "pages/list.tsx/listComponent.jsx", 
-<<<<<<< HEAD
-    "pages/index.js", "pages/delete"],
-=======
     "pages/index.jsx", "pages/contacts", "pages/contacts.tsx/[id].js"],
->>>>>>> origin/connect-firebase-data
 
   "exclude": [
     "node_modules"
