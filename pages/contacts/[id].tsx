@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import { firestore, auth } from '../../lib/firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useEffect, useState } from "react";
-
+import StyleSheet from '../../styles/styleSheet.module.css';
 
 export default function Contact() {
   const router = useRouter();
@@ -27,10 +27,70 @@ export default function Contact() {
     else {console.log('router is not ready')}
   },[id]);
   
-  
   return (
-      <main>
-          <h1>{contact ? contact.name : "No Contact"}</h1>
-      </main>
-    )    
-}
+    <div className={StyleSheet.profileBackground}>
+    <body className={StyleSheet.bodyProfile}>
+  
+    {/* <!-- Hero Image, Flush : BEGIN --> */}
+      <tr className={StyleSheet.hero}>
+      <td>
+        <img src={"/IMAGES/wp3198779.jpg"} className={StyleSheet.heroImage}/>
+      </td>
+      </tr>
+             
+   {/* <!-- Hero Image, Flush : END --> */}
+   {/* <!-- 1 BIO : BEGIN --> */}
+    <tr>
+      <td>
+        <table className={StyleSheet.tableProfile}> 
+        <div className={"CenterProfile"}>
+        <img src={"/IMAGES/ZoeFace.jpg"} className={StyleSheet.profilePic}/>
+        <p className={"friendHeader"}>
+            {contact.name}</p>
+            <div>{contact.phone}</div>
+            <div>July, 23rd, 1997</div>
+        </div>
+          <tr>
+            <td> 
+              
+            {/* <!-- NOTHING IN THIS DATA CELL --> */}
+              
+            
+              {/* <!-- Button : Begin --> */}
+            
+              <table className={StyleSheet.tableProfile} >
+        
+                <tr>
+                  <td className={StyleSheet.tableDataProfile}>
+  
+                    {/* </a> */}
+                </td>
+                </tr>
+              </table>
+            {/*<!-- Button : END --> */}
+            
+            </td>
+          </tr>
+        </table></td>
+    </tr>
+           {/* <!-- BIO : END --> */}
+           {/* <!-- Two Even Columns : BEGIN --> */}
+    <tr> 
+    <td className={StyleSheet.buttonsTable}>
+      <table className={StyleSheet.a}>
+        <tr>
+          <td className={StyleSheet.b}>
+          <textarea name="profile" cols="70" rows="10"></textarea>
+        </td>
+    </tr>
+        </table> 
+      </td>
+    </tr>
+    {/* <!-- Two Even Columns : END --> */}
+
+    </body>
+    </div>
+  
+  );
+  
+};
