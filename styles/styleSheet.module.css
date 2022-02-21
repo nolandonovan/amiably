@@ -148,9 +148,9 @@ width:100%;
 
   /* List : Start */
 
-  .boxList {
-    background-image: url('/IMAGES/gradient.jpg');
-    background-attachment: fixed;
+.boxList {
+    background: rgb(230,237,255);
+    background: linear-gradient(114deg, rgba(230,237,255,1) 2%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 63%, rgba(223,254,255,1) 100%);
     width: auto;
     min-width: 500px;
     height: 250px;
@@ -158,6 +158,10 @@ width:100%;
     border-radius: 10px;
     margin-bottom: 25px;
 } 
+.boxList:hover {
+    background: rgb(230,237,255);
+    background: linear-gradient(155deg, rgba(230,237,255,1) 14%, rgba(255,255,255,1) 46%, rgba(255,255,255,1) 51%, rgba(223,254,255,1) 83%);
+}
 
 .textLinkList{
     color:white;
