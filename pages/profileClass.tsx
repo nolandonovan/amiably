@@ -114,6 +114,7 @@ class Profile extends React.Component {
      <br/>
 
      <div>
+     <Edit value={this.state.isEditing}><p> woah!!!!!!!!!!!!!!!!!!!!1 </p>  </Edit>
 
      <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{this.buttonName}</button> 
            {/* {
@@ -122,7 +123,7 @@ class Profile extends React.Component {
            <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{}</button> 
           } */}
 
-<Edit value={this.state.isEditing}> </Edit>
+
      </div>
    </td>
 </tr>
