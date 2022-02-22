@@ -5,21 +5,22 @@ import { UserContext } from "../lib/context";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { doc, setDoc } from "firebase/firestore"; 
 import toast from 'react-hot-toast';
+import prop from './profileClass';
 
 /* 
 This fuction is an edit button that changes the state from is the user editing to false or true when pressed.
 */
 
-function Edit (){
+function Edit (props: any){
 
-    const [isEditing, setIsEditing] = useState(false);
-
+console.log(props.value)
+let isEditing = (props.value);
 
     return (
         <div>
             {
             isEditing == false ? 
-            <p>edit</p>
+            <h1>edit</h1>
             // <button type="submit" className={StyleSheet.buttonCreate} onClick={() => setIsEditing(false)}>save edits</button> 
             : <p>save</p>
             //  <button type="submit" className={StyleSheet.buttonCreate} onClick={() => setIsEditing(true)}>edit</button> 

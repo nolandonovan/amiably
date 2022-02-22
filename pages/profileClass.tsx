@@ -22,11 +22,11 @@ class Profile extends React.Component {
     // const [isEditing, setIsEditing] = useState(false);
   
     state = {
-        isEditing: false,
-        contacts: [
-            {id: 1, name: "Zoe", lastName: "Richardson"},
-            {id: 2, name: "Noly", lastName: "Donovan"}
-        ]
+        isEditing: false
+        // contacts: [
+        //     {id: 1, name: "Zoe", lastName: "Richardson"},
+        //     {id: 2, name: "Noly", lastName: "Donovan"}
+        // ]
       };
 
       buttonName = 'edit';
@@ -39,11 +39,16 @@ class Profile extends React.Component {
         (this.buttonName = 'edit'))
     }
 
+
+
+
+
+
     render() { 
         return (  
              
 <div className={StyleSheet.profileBackground}>
-<Edit value={this.state.isEditing}></Edit>
+
 
 <body className={StyleSheet.bodyProfile}>
    
@@ -116,7 +121,8 @@ class Profile extends React.Component {
            <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{}</button> 
            <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{}</button> 
           } */}
-          
+
+<Edit value={this.state.isEditing}> </Edit>
      </div>
    </td>
 </tr>
