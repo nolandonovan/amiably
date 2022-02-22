@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState, Component } from 'react';
-import ReactDOM from 'react-dom';
-import StyleSheet from '../styles/styleSheet.module.css';
-// import Edit from './editProfile';
+// import ReactDOM from 'react-dom';
+import StyleSheet from '../styles/styleSheet.module.css'
+import Edit from './editProfile';
 import ProfileInfo from './profileInfo';
 
 
@@ -20,7 +20,7 @@ import ProfileInfo from './profileInfo';
 class Profile extends React.Component {
 
     // const [isEditing, setIsEditing] = useState(false);
-
+  
     state = {
         isEditing: false,
         contacts: [
@@ -29,20 +29,21 @@ class Profile extends React.Component {
         ]
       };
 
+      buttonName = 'edit';
+
     handleEditing = () => {
        ( this.state.isEditing === false) ?
-         this.setState({ isEditing: true})  
-        :  this.setState({isEditing: false})
+         (this.setState({ isEditing: true}) +
+         (this.buttonName = 'save'))
+        :  ( this.setState({isEditing: false}) +
+        (this.buttonName = 'edit'))
     }
 
     render() { 
         return (  
              
 <div className={StyleSheet.profileBackground}>
-
-{ 
- this.state.isEditing ? (<h1>hi</h1>)
-  : (<h1>bye</h1>)}
+<Edit value={this.state.isEditing}></Edit>
 
 <body className={StyleSheet.bodyProfile}>
    
@@ -109,12 +110,13 @@ class Profile extends React.Component {
 
      <div>
 
-     <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{}</button> 
+     <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{this.buttonName}</button> 
            {/* {
           
            <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{}</button> 
            <button type="submit" className={StyleSheet.buttonCreate} onClick={() => this.handleEditing()}>{}</button> 
           } */}
+          
      </div>
    </td>
 </tr>
