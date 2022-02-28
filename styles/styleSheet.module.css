@@ -1,3 +1,15 @@
+.hidden {
+    display: none;
+}
+
+.editing{
+
+}
+
+.editable{
+    
+}
+
 .box {
 	background-color: rgb(142, 187, 201);
 	width: 310px;

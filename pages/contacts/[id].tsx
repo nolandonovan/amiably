@@ -30,20 +30,15 @@ export default function Contact() {
   return (
     <div className={StyleSheet.profileBackground}>
     <body className={StyleSheet.bodyProfile}>
-  
-    {/* <!-- Hero Image, Flush : BEGIN --> */}
       <tr className={StyleSheet.hero}>
       <td>
         <img src={"/IMAGES/wp3198779.jpg"} className={StyleSheet.heroImage}/>
       </td>
       </tr>
-             
-   {/* <!-- Hero Image, Flush : END --> */}
-   {/* <!-- 1 BIO : BEGIN --> */}
     <tr>
       <td>
         <table className={StyleSheet.tableProfile}> 
-        <div className={"CenterProfile"}>
+        <input className={"CenterProfile"}>
         <img src={"/IMAGES/ZoeFace.jpg"} className={StyleSheet.profilePic}/>
         <p className={"friendHeader"}>
             {contact.name}</p>
@@ -51,13 +46,7 @@ export default function Contact() {
             <div>July, 23rd, 1997</div>
         </div>
           <tr>
-            <td> 
-              
-            {/* <!-- NOTHING IN THIS DATA CELL --> */}
-              
-            
-              {/* <!-- Button : Begin --> */}
-            
+            <td>             
               <table className={StyleSheet.tableProfile} >
         
                 <tr>
