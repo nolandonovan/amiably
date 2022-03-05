@@ -17,14 +17,27 @@ body {
 
 }
 
+textarea {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    resize: none;
+    font-size: xx-large;
+    font-family: 'Nunito';
+    width: 75%;
+    height: fit-content;
+    margin: none;
 
+};
 
 a {
   color: inherit;
   text-decoration: none;
+
 }
 
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 

@@ -18,7 +18,7 @@ export default function List() {
 
         <>
         
-        <title>amiably</title>
+        <title>amiably hahahahaah</title>
         <body className={StyleSheet.backgroundList}>
         <table className={StyleSheet.tableList}>
 

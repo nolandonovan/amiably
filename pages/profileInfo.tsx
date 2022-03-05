@@ -6,7 +6,7 @@ import { useEffect, useState, useCallback, useContext } from 'react';
 import { doc, setDoc } from "firebase/firestore"; 
 import toast from 'react-hot-toast';
 import Edit from "./editProfile";
-import Profile from "./profile";
+import Profile from "./test";
 
 
 /*

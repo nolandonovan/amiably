@@ -4,10 +4,13 @@ import toast from 'react-hot-toast';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { getDocs, collection } from "firebase/firestore";
 import { auth, firestore } from '../lib/firebase';
+import InitialLogo from "./logo";
 
 export default function List() {
-
+ 
   const [contacts, setContacts] = useState([])
+  
+  
 
   useEffect(() => {
       async function getContacts(){
@@ -29,11 +32,14 @@ if (contacts.length > 0) {
     return (
       <a href={'/contacts/'+contact.id}>
         <div className={StyleSheet.boxList}>
-        <img src={'/IMAGES/SHbrunet1.png'} className={StyleSheet.avatar}/>
+        {/* <img src={'/IMAGES/SHbrunet1.png'} className={StyleSheet.avatar}/> */}
+
+        <InitialLogo userObj={contact} />
+       
         <div>
         <p className={StyleSheet.avatarName}>
             {contact.name} </p>
-            <span>July 23rd</span>
+            <span>Birthday</span>
         </div>
         </div>
       </a>

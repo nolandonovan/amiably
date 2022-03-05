@@ -13,16 +13,16 @@ This fuction is an edit button that changes the state from is the user editing t
 
 function Edit (props: any){
 
-console.log(props.value)
+console.log(props.contacts);
 let isEditing = (props.value);
 
     return (
         <div>
             {
-            isEditing == false ? 
-            <h1>edit</h1>
+            isEditing === false ? 
+            <h1>edit {props.contacts}</h1>
             // <button type="submit" className={StyleSheet.buttonCreate} onClick={() => setIsEditing(false)}>save edits</button> 
-            : <p>save</p>
+            : <h1>save</h1>
             //  <button type="submit" className={StyleSheet.buttonCreate} onClick={() => setIsEditing(true)}>edit</button> 
            }
       </div>

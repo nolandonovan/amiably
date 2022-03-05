@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx", 
-    "pages/TEST.tsx", 
+    "pages/test.tsx", 
     "pages/list.tsx/listComponent.jsx", 
     "pages/index.jsx", "pages/contacts", "pages/contacts.tsx/[id].js"],
 

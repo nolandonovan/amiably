@@ -1,3 +1,21 @@
+.hidden {
+ display: none;
+}
+.controls{
+    display: flex;
+}
+
+.showEditing {
+    border:  blue;
+    background-color: whitesmoke;
+    outline: gray;
+    resize: none;
+    font-size: xx-large;
+    font-family: 'Nunito'; 
+    
+};
+
+
 .box {
 	background-color: rgb(142, 187, 201);
 	width: 310px;
@@ -20,7 +38,7 @@ img.heroImage {
     height: auto;
 }
 
-/* Profiles : Begin  */
+/* da : Begin  */
 
 .avatar {
     height: 200px;
@@ -36,13 +54,13 @@ img.heroImage {
     margin-bottom: 0px;
 
 }
-.profilePic {
+/* .profilePic {
     width: 250px;
     border-radius: 125px;
     float: center;
     margin-top: 50px;
     padding: 10px 10px 0px 10px;
-}
+} */
 
 
 .CenterProfile {
@@ -86,7 +104,7 @@ padding-top: 10px;
 }
 
 .profileBackground {
- background-color: slategrey;
+
  text-align: center;
  margin: auto;
  width: 100%;
@@ -108,7 +126,7 @@ padding-top: 10px;
     width:100%;
  }
 
- .a{
+ /* .a{
     border: 0;
        text-align: center;
         width: 100%;
@@ -120,7 +138,7 @@ padding-top: 10px;
      vertical-align:top;
     font-size:0;
     padding: 10px 0;
- }
+ } */
 
  .stackColumn{
 display:inline-block;
@@ -131,18 +149,38 @@ vertical-align:top;
 width:100%;     
  }
 
-/* p {
-    padding-top: 5px;
-    color: black;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 
 
 /* Profiles : END */
 
   /* List : Start */
+
+.initialLogo {
+    float:left;
+    background-color: #a1a2a5;
+    width: 225px;
+    height: 225px;
+    border-radius: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    /* float: center; */
+    /* margin-top: 50px; */
+    /* padding: 10px 10px 0px 10px; */
+
+}
+
+.initial{
+    margin-left: auto;
+  
+    margin-right: auto;
+    font-size: 120px;
+    color: white;
+    
+
+    /* background-color: userData.color; */
+}
 
 .boxList {
     background: rgb(230,237,255);
@@ -161,7 +199,7 @@ width:100%;
 
 .textLinkList{
     color:white;
-    text-decoration:underline;
+    text-decoration: none;
     font-weight: bold;
 }
 
@@ -182,15 +220,7 @@ width:100%;
   background: rgba(127, 170, 199, 0.349);
 }
 
-/* #spaceBlock {
-    background-color: white;
-	width: auto;
-	height: 310px;
-	margin-left: 3px;
 
-	text-align: center;
-
-} */
 .buttonList {
     background: #219ecf;
     border: 15px solid #219ecf;
@@ -240,7 +270,7 @@ margin: auto;
     border-radius: 3px;
     font-weight: bold;
     max-width: 30%;
-    width: auto;
+    width: 35px;
     min-width: 15%;
     height: 3%;
     padding-left: 5px;
