@@ -18,16 +18,15 @@ body {
 }
 
 textarea {
-    border: none;
-    background-color: transparent;
-    outline: none;
-    resize: none;
-    font-size: xx-large;
-    font-family: 'Nunito';
-    width: 75%;
-    height: fit-content;
-    margin: none;
-
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  font-size: xx-large;
+  font-family: 'Nunito';
+  width: 75%;
+  height: fit-content;
+  margin: none;
 };
 
 a {
@@ -40,4 +39,3 @@ a {
   box-sizing: border-box;
   text-decoration: none;
 }
-

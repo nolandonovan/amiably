@@ -1,5 +1,5 @@
 import React from "react";
-import StyleSheet from '../../styles/styleSheet.module.css'
+import StyleSheet from '../styles/styleSheet.module.css'
 import { auth, firestore } from "../lib/firebase"
 import { UserContext } from "../lib/context";
 import { useEffect, useState, useCallback, useContext } from 'react';
@@ -27,11 +27,7 @@ function CreateContactForm(){
     const onSubmit = async (e) => {
         e.preventDefault();
     
-        // Create refs for both documents
         const userDoc = firestore.doc(`users/${user.uid}`);
-    
-        // Commit both docs together as a batch write.
-        //await setDoc(userDoc, { displayName: user.displayName, form: formValue});
         
         const contactData = {
             name: name,
@@ -60,51 +56,3 @@ function CreateContactForm(){
         </section>
     )
 };
- 
-// class createNew extends React.Component {
-//     constructor(props){
-//     super(props)
-//     this.state = {
-//         value: ''};
-
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-// }
-
-// handleChange(event) {
-//     this.setState({value: event.target.value})
-// }
-
-// handleSubmit(event) {
-// event.preventDefault();
-// }
-
-// render() { 
-//     return (
-//         <form onSubmit={this.handleSubmit} className={StyleSheet.profileBackground}>
-//             <table className={StyleSheet.formTable}>
-//                 <tr>
-//             <label>
-//                 Name:
-//                 <input type="text" value={this.state.value} onChange={this.handleChange} />
-//             </label>
-//             </tr>
-//             <tr>
-//             <label>
-//                 Name:
-//                 <input type="text" value={this.state.value} onChange={this.handleChange} />
-//             </label>
-//             </tr>
-//             <tr>
-//             {/* <input type="submit" value={"Submit"} /> */}
-//             <button className={StyleSheet.buttonCreate} type="submit" value={"Submit"} onClick={() => toast.success('Hello '+ this.state.value)}>
-//                 submit
-//           </button>
-//           </tr>
-//           </table>
-//         </form>
-//         );
-// }
-// }
- 
-// export default createNew;

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { firestore, auth, serverTimestamp } from '../../lib/firebase';
+import { firestore, auth } from '../../lib/firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useEffect, useState } from "react";
 import StyleSheet from '../../styles/styleSheet.module.css';
@@ -12,26 +12,17 @@ import Navbar from "../../components/navbar";
 
 export default function Contact() {
     
-
   const router = useRouter();
-  
+
   const uid = auth.currentUser.uid;
   const { id } = router.query;
   const [contact,setContact] = useState("")
   const [editing,setEditing] = useState(false);
-  
-  {console.log("detail", contact) }
-  function cancel(){
-    setEditing(false)
-}
+  const [contactEdit,setContactEdit] = useState("")
 
-  async function getContact(){
-    const contactRef = firestore.collection('users').doc(uid).collection('contacts').doc(id);
-    const contactData = await contactRef.get();
-    setContact(contactData.data())
-    console.log("Get contact ran")
-  }
-  
+  const contactRef = firestore.collection('users').doc(uid).collection('contacts').doc(id);
+
+  //Load Contact
   useEffect(() => {
     console.log(`useEffect triggered`);
     if (router.isReady){
@@ -39,91 +30,62 @@ export default function Contact() {
     }
     else {console.log('router is not ready')}
   },[id]);
+
+  async function getContact(){
+    const contactData = await contactRef.get();
+    setContact(contactData.data())
+    setContactEdit(contactData.data())
+    console.log("Get contact ran")
+  }
+
+  async function save(){
+    setEditing(false)    
+    await contactRef.set(
+      contactEdit
+    );
+    toast.success("Saved")
+  }
+
+  function cancel(){
+    setEditing(false)
+    let noteCheck = contact.note ? contact.note : "";
+    setContactEdit({...contact, note: noteCheck})
+  }
   
-  
+  const edit = (e) => {
+    setContactEdit({ ...contactEdit, [e.target.name]: e.target.value });
+    console.log(contactEdit)
+  };
 
   return (
-    <div className={StyleSheet.profileBackground}>
-      <Navbar />
-    <body className={StyleSheet.bodyProfile}>
-  
-    {/* <!-- Hero Image, Flush : BEGIN --> */}
-      <tr className={StyleSheet.hero}>
-      <td>
+    <>
+    <Navbar/>
+    <main>
+      <div className={StyleSheet.bodyProfile}>    
         <img src={"/IMAGES/wp3198779.jpg"} className={StyleSheet.heroImage}/>
-      </td>
-      </tr>
-             
-   {/* <!-- Hero Image, Flush : END --> */}
-   {/* <!-- 1 BIO : BEGIN --> */}
-    <tr>
-      <td>
-        <table className={StyleSheet.tableProfile}> 
-       <div className={StyleSheet.floatCenter}> <InitialLogo contact={contact} /> </div>
-        <div className={StyleSheet.centerDetail}>
-        
-        
-          <p>
-         <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.name}></textarea>
-            {/* <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.phone}></textarea> */}
-            {/* <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.Birthday}></textarea> */}
-          </p>
-           
+        <div className={StyleSheet.floatCenter}>
+          <InitialLogo contact={contactEdit}/>
         </div>
-          <tr>
-            <td> 
-              
-            {/* <!-- NOTHING IN THIS DATA CELL --> */}
-              
-            
-              {/* <!-- Button : Begin --> */}
-            
-              <table className={StyleSheet.tableProfile} >
-        
-                <tr>
-                  <td className={StyleSheet.tableDataProfile}>
-  
-                    {/* </a> */}
-                </td>
-                </tr>
-              </table>
-            {/*<!-- Button : END --> */}
-            
-            </td>
-          </tr>
-        </table></td>
-    </tr>
-           {/* <!-- BIO : END --> */}
-           {/* <!-- Two Even Columns : BEGIN --> */}
-    <tr> 
-    <td className={StyleSheet.buttonsTable}>
-      <table className={StyleSheet.a}>
-        <tr>
-          <td className={StyleSheet.b}>
-          <textarea placeholder={"Add notes here..."} className={editing ? StyleSheet.showEditing : '' } disabled={!editing} cols="70" rows="10"></textarea>
-          <div className={"container"}>
-            <form>
+        <div className={StyleSheet.centerDetail}>
+          <p>
+            <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } name="name" value={contactEdit ? contactEdit.name : ""} onChange={(e) => edit(e)}></textarea>
+          </p>
+        </div>  
+        <td className={StyleSheet.buttonsTable}>
+          <textarea disabled={!editing} placeholder={"Add notes here..."} className={editing ? StyleSheet.showEditing : '' } name="note" value={contactEdit ? contactEdit.note : ""} onChange={(e) => edit(e)} cols="70" rows="10"></textarea>
+          <div>
             <div className={editing ? "" : StyleSheet.hidden}>
-                <button>Save</button>
-                <button className={StyleSheet.buttonList} onClick={() => cancel()}>Cancel</button>
+              <button type="button" className={StyleSheet.buttonCreate} onClick={() => save()}>Save</button>
+              <button type="button" className={"btn btn-secondary"} onClick={() => cancel()}>Cancel</button>
             </div>
-            </form>
             <div className={editing ? StyleSheet.hidden : ""}>
-                <button className={StyleSheet.buttonCreate} onClick={() => setEditing(true)}>✏️</button>
-            </div>
-            
-        </div>   
-        </td>
-    </tr>
-        </table> 
-      </td>
-    </tr>
-    {/* <!-- Two Even Columns : END --> */}
-
-    </body>
-    </div>
+              <button type="button" className={StyleSheet.buttonCreate} onClick={() => setEditing(true)}>✏️</button>
+            </div>  
+          </div>  
+        </td>       
+      </div>
+    </main>
+    </>
   
   );
-  
 };
-
