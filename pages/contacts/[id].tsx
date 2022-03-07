@@ -22,7 +22,6 @@ export default function Contact() {
 
   const contactRef = firestore.collection('users').doc(uid).collection('contacts').doc(id);
 
-  //Load Contact
   useEffect(() => {
     console.log(`useEffect triggered`);
     if (router.isReady){
@@ -44,6 +43,7 @@ export default function Contact() {
       contactEdit
     );
     toast.success("Saved")
+    setContact(contactEdit)
   }
 
   function cancel(){
@@ -52,10 +52,21 @@ export default function Contact() {
     setContactEdit({...contact, note: noteCheck})
   }
   
-  const edit = (e) => {
+  function edit(e) {
     setContactEdit({ ...contactEdit, [e.target.name]: e.target.value });
     console.log(contactEdit)
   };
+
+  async function deleteContact(){
+    await contactRef.delete()
+    .then(res => {
+      console.log("Contact deleted");
+      router.push('/')
+      toast.success("Contact Deleted")
+    }).catch(error => {
+      console.error("Error deleting contact: ", error);
+    });
+}
 
   return (
     <>
