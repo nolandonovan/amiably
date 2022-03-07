@@ -4,7 +4,8 @@ import toast from 'react-hot-toast';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { getDocs, collection } from "firebase/firestore";
 import { auth, firestore } from '../lib/firebase';
-import InitialLogo from "./logo";
+import InitialLogo from "../components/contactLogo";
+import Navbar from "../components/navbar";
 
 export default function List() {
  
@@ -30,19 +31,18 @@ export default function List() {
 if (contacts.length > 0) {
   let mappingContacts = contacts.map(function(contact) {
     return (
-      <a href={'/contacts/'+contact.id}>
-        <div className={StyleSheet.boxList}>
-        {/* <img src={'/IMAGES/SHbrunet1.png'} className={StyleSheet.avatar}/> */}
-
-        <InitialLogo userObj={contact} />
-       
-        <div>
-        <p className={StyleSheet.avatarName}>
-            {contact.name} </p>
-            <span>Birthday</span>
-        </div>
-        </div>
-      </a>
+      <div >
+        
+        <a href={'/contacts/'+contact.id}>
+          <div className={StyleSheet.boxList}>
+          <InitialLogo contact={contact} />
+          <p className={StyleSheet.avatarName}>
+              {contact.name} </p>
+              <span>Birthday</span>
+        
+          </div>
+        </a>
+      </div>
       ); // return end
   }) // function end
  return mappingContacts;

@@ -7,7 +7,8 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import Link from 'next/link';
 import { SP } from "next/dist/shared/lib/utils";
-
+import InitialLogo from "../../components/contactLogo";
+import Navbar from "../../components/navbar";
 
 export default function Contact() {
     
@@ -19,6 +20,7 @@ export default function Contact() {
   const [contact,setContact] = useState("")
   const [editing,setEditing] = useState(false);
   
+  {console.log("detail", contact) }
   function cancel(){
     setEditing(false)
 }
@@ -42,6 +44,7 @@ export default function Contact() {
 
   return (
     <div className={StyleSheet.profileBackground}>
+      <Navbar />
     <body className={StyleSheet.bodyProfile}>
   
     {/* <!-- Hero Image, Flush : BEGIN --> */}
@@ -56,14 +59,15 @@ export default function Contact() {
     <tr>
       <td>
         <table className={StyleSheet.tableProfile}> 
-        <div className={"CenterProfile"}>
-        <img src={"/IMAGES/ZoeFace.jpg"} className={StyleSheet.profilePic}/>
-        {/* <div data-initials="GC"></div> */}
-        <div className={StyleSheet.detailHeader}>
-            <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.name}></textarea>
+       <div className={StyleSheet.floatCenter}> <InitialLogo contact={contact} /> </div>
+        <div className={StyleSheet.centerDetail}>
+        
+        
+          <p>
+         <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.name}></textarea>
             {/* <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.phone}></textarea> */}
             {/* <textarea disabled={!editing} className={editing ? StyleSheet.showEditing : '' } defaultValue={contact.Birthday}></textarea> */}
-        </div>
+          </p>
            
         </div>
           <tr>
@@ -96,7 +100,7 @@ export default function Contact() {
       <table className={StyleSheet.a}>
         <tr>
           <td className={StyleSheet.b}>
-          <textarea placeholder={"Add notes here..."} disabled={!editing} cols="70" rows="10"></textarea>
+          <textarea placeholder={"Add notes here..."} className={editing ? StyleSheet.showEditing : '' } disabled={!editing} cols="70" rows="10"></textarea>
           <div className={"container"}>
             <form>
             <div className={editing ? "" : StyleSheet.hidden}>

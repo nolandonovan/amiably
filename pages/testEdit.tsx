@@ -1,7 +1,7 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import StyleSheet from '../styles/styleSheet.module.css'
-import InitialLogo from './logo';
+import InitialLogo from '../components/contactLogo';
 
 const LogoTest = () => {
   const contact = {"name": "Nolan Donovan", "phone": "913-925-0609", "note": "Nolan is a nice guy. he likes to code and is super smart."}
