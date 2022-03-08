@@ -72,8 +72,10 @@ export default function Contact() {
     <>
     <Navbar/>
     <main>
-      <div className={StyleSheet.bodyProfile}>    
+    <img src={'/backArrow.svg'} alt='back arrow' />
+      <div className={StyleSheet.content}>    
         <img src={"/IMAGES/wp3198779.jpg"} className={StyleSheet.heroImage}/>
+      
         <div className={StyleSheet.floatCenter}>
           <InitialLogo contact={contactEdit}/>
         </div>
@@ -86,11 +88,12 @@ export default function Contact() {
           <textarea disabled={!editing} placeholder={"Add notes here..."} className={editing ? StyleSheet.showEditing : '' } name="note" value={contactEdit ? contactEdit.note : ""} onChange={(e) => edit(e)} cols="70" rows="10"></textarea>
           <div>
             <div className={editing ? "" : StyleSheet.hidden}>
-              <button type="button" className={StyleSheet.buttonCreate} onClick={() => save()}>Save</button>
-              <button type="button" className={"btn btn-secondary"} onClick={() => cancel()}>Cancel</button>
+              <button type="button" className={StyleSheet.buttonCreate} onClick={() => save()}>save</button>
+              <button type="button" className={StyleSheet.buttonCreate} onClick={() => cancel()}>cancel</button>
+              <button type="button" className={StyleSheet.buttonCreate} onClick={deleteContact}>delete</button>
             </div>
             <div className={editing ? StyleSheet.hidden : ""}>
-              <button type="button" className={StyleSheet.buttonCreate} onClick={() => setEditing(true)}>✏️</button>
+              <button type="button" className={StyleSheet.buttonCreate} onClick={() => setEditing(true)}><img src={"/editPencil.svg"} /></button>
             </div>  
           </div>  
         </td>       

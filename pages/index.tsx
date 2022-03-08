@@ -28,17 +28,30 @@ export default function List() {
     },[] //empty array so the useEffect only runs on componentDidMount()
   )
 
-if (contacts.length > 0) {
+function FloatButton() {
+  if (contacts.length > 0) {
+ return (
+  <a className={StyleSheet.buttonCreateFloat}   onClick={() => {window.location.href = '/create';}} >
+  <img src="/plus.svg" alt="plus" />
+  </a>
+ ) 
+}
+return null
+}
+function ListAllContacts() {
+
+   if (contacts.length > 0) {
   let mappingContacts = contacts.map(function(contact) {
     return (
       <div >
         
-        <a href={'/contacts/'+contact.id}>
+        <a classname={StyleSheet.noUnderline} href={'/contacts/'+contact.id}>
           <div className={StyleSheet.boxList}>
           <InitialLogo contact={contact} />
-          <p className={StyleSheet.avatarName}>
-              {contact.name} </p>
-              <span>Birthday</span>
+          <h2 className={StyleSheet.avatarName}>
+              {contact.name} 
+              <br /><h5>{contact.phone}</h5></h2>
+              
         
           </div>
         </a>
@@ -53,8 +66,18 @@ if (contacts.length > 0) {
       Make Your First Contact!
       </a>
       </div> 
-    );
-}; // end of else
-    
+    )
+} // end of else
+};
+
+return (
+      <>
+      <Navbar />
+        <div className={StyleSheet.content}>
+        <ListAllContacts />
+        <FloatButton />
+        </div>
+      </>
+);
 } // end of ListComponent
  

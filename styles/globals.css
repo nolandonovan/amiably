@@ -29,13 +29,15 @@ textarea {
   margin: none;
 };
 
-a {
-  color: inherit;
-  text-decoration: none;
-
+a, a:hover, a:active, a:visited, a:focus, a:target-within, a:target, a:focus-visible, a:focus-within{
+  font-family: 'Nunito';
+  text-decoration:none;
 }
 
-* {
+*, *:hover, *:active, *:visited, *:focus, *::after, *::before{
   box-sizing: border-box;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-family: 'Nunito';
 }
+
+

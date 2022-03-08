@@ -5,16 +5,20 @@ import { UserContext } from "../lib/context";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { doc, setDoc } from "firebase/firestore"; 
 import toast from 'react-hot-toast';
+import Navbar from "../components/navbar";
 
 export default function CreateContact() {
 
     const { user } = useContext(UserContext);
 
     return (
-        <main className={StyleSheet.formTable}>
-            <h1>create new contact</h1>
-            <CreateContactForm/>
-        </main>
+        <>
+         <Navbar />
+            <main className={StyleSheet.content}>
+                
+                <CreateContactForm/>
+            </main>
+        </>
     )
 }
 
@@ -42,14 +46,18 @@ function CreateContactForm(){
         <section>
             <form onSubmit={onSubmit}>
             <table className={StyleSheet.formTable}>
-            <label>name: 
-                <input name="name" placeholder="John Smith" onChange={e => setName(e.target.value)} /><br/>
-            </label><br/>
-            <label>phone: 
+            <br /><h1><strong>create new contact</strong></h1>
+            <br/><label>name:  
+                <input name="name" placeholder="Jainet Smith" onChange={e => setName(e.target.value)} /><br/>
+                <br/></label>
+            <label>phone:  
                 <input name="phone" placeholder="716-776-2323" onChange={e => setPhone(e.target.value)} /><br/>
-            </label><br/>
+                <br/></label>
+            {/* <label>birthday:  
+                <input name="Birthday" placeholder="mm/dd/yyyy" /><br/>
+            </label> */}
             <div>
-                <button type="submit" className={StyleSheet.buttonCreate} >submit</button>
+            <br/><button type="submit" className={StyleSheet.buttonCreate} >submit</button>
             </div>
             </table>
             </form>
